@@ -1,10 +1,10 @@
 " puppet syntax file
 " Filename:     puppet.vim
-" Language:     puppet configuration file 
+" Language:     puppet configuration file
 " Maintainer:   Luke Kanies <luke@madstop.com>
 " URL:          https://github.com/puppetlabs/puppet/blob/master/ext/vim/syntax/puppet.vim
-" Last Change: 
-" Version:      
+" Last Change:
+" Version:
 "
 
 " Copied from the cfengine, ruby, and perl syntax files
@@ -24,6 +24,7 @@ syn match   puppetArgument      "\w\+" contained
 syn match   puppetDefName     "\(\w\|\:\)\+\s*" contained
 
 syn match   puppetInstance           "\(\w\|\:\)\+\s*{" contains=puppetTypeBrace,puppetTypeName,puppetTypeDefault
+syn match   puppetInstance           "\(\w\|\:\)\+\s*(" contains=puppetTypeBrace,puppetTypeName,puppetTypeDefault
 syn match   puppetExisting       "[A-Z\:]\(\w\|\:\)*\[" contains=puppetTypeDefault,puppetTypeBrack
 syn match   puppetTypeBrack      "\[" contained
 syn match   puppetTypeBrace       "{" contained
@@ -44,9 +45,9 @@ syn match   puppetBrack           "\]"
 syn region  puppetString start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=puppetVariable
 syn region  puppetString start=+'+ skip=+\\\\\|\\"+ end=+'+
 
-syn keyword puppetBoolean    true false 
+syn keyword puppetBoolean    true false
 syn keyword puppetKeyword    import inherits include
-syn keyword puppetControl    case default 
+syn keyword puppetControl    case default
 
 " comments last overriding everything else
 syn match   puppetComment            "\s*#.*$" contains=puppetTodo
